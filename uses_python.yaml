@@ -1,0 +1,11 @@
+pybedtools:
+    - 3.4
+tophat2:
+    - 2.7
+hisat2:
+    - 2.7
+pysam:
+    - 2.7
+    - 3.4
+cutadapt:
+    - 3.4

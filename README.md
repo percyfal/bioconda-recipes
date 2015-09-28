@@ -46,3 +46,18 @@ For packages that build on OSX, run:
 or leave off `your_package` to try and build all out of date packages. Packages
 that fail to build on OSX should get added to `CUSTOM_TARGETS` in
 `update_binstar_packages.py` to define the platforms they build on.
+
+## Packages using Python
+Some packages need a certain Python version to work. To specify Python
+version build targets, add an entry in the `uses_python.yaml` file with the
+Python versions to build for, e.g., for a package compatible with Python 2 and
+3:
+
+    newpackage:
+        - 2.7
+        - 3.4
+        - 3.5
+
+This file is read by `update_binstar_packages.py`. In this example, that script
+will build and upload a separate `newpackage` package for each Python version
+listed.
