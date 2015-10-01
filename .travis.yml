@@ -1,0 +1,12 @@
+sudo: required
+services:
+    - docker
+before_install:
+    - docker pull bioconda/bioconda-builder
+    - docker ps -a
+
+script: docker run --net=host --rm=true -i -t -v `pwd`:/tmp/conda-recipes bioconda/bioconda-builder /bin/bash /tmp/conda-recipes/update_packages_docker.sh cutadapt --force-build
+
+branches:
+    only:
+        - travis-testing
